@@ -12,16 +12,11 @@ public class MapCreator : MonoBehaviour {
 
 
 	private GameObject[,] GameField;
-<<<<<<< HEAD
-	private uint[] possibleColors;
-	private Texture[] possibleTextures;
-=======
 	private Color[] possibleColors;
 	private Texture2D[] possibleTextures;
 
 	// Inspector stuff
 	public GameObject prefapBlock;
->>>>>>> origin/master
 
 	// Use this for initialization
 	void Start () {
@@ -56,16 +51,27 @@ public class MapCreator : MonoBehaviour {
 	}
 	private void fillGameField(){
 		GameObject dummyBlock;
-
+		bool found = false;
 
 		int i;
 		int j;
 		print (GameField.GetLength (0));
 		for (i = 0; i < GameField.GetLength(0); i++) {
 			for (j = 0; j< GameField.GetLength(1); j++) {
-				dummyBlock = createRandomBrick ();
-				GameField[i,j] = dummyBlock;
-				GameField[i,j].transform.position = new Vector3(i,0,j);
+				while(!found){
+					dummyBlock = createRandomBrick ();
+					GameField[i,j] = dummyBlock;
+					GameField[i,j].transform.position = new Vector3(i,0,j);
+
+					if(NeighbourCheck.Check(dummyBlock,GameField,i,j)){
+						found = true;
+					}else{
+						Destroy(dummyBlock);
+					}
+
+				}
+				found = false;
+
 			}
 		}						
 	}

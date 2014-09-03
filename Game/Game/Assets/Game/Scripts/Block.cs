@@ -6,14 +6,14 @@ public class Block : MonoBehaviour {
 
 	public Texture2D picture;
 	public Color color; 
-
+//<<<<<<< HEAD
 	//private MapCreator creator;
-
+//=======
 	public GameObject cube;
 	public GameObject plane;
 	// change this later to picture
 	public Texture2D dummypicture;
-
+//>>>>>>> origin/master
 
 	// Use this for initialization
 	void Start () {

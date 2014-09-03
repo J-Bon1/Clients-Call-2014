@@ -39,16 +39,16 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>D:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/Programme/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>D:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Programme/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Game\Block.cs" />
-     <Compile Include="Assets\Game\MapCreator.cs" />
-     <Compile Include="Assets\Game\Neighbour check.cs" />
+     <Compile Include="Assets\Game\Scripts\Block.cs" />
+     <Compile Include="Assets\Game\Scripts\MapCreator.cs" />
+     <Compile Include="Assets\Game\Scripts\NeighbourCheck.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
