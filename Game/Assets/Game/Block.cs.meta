@@ -2,7 +2,11 @@ fileFormatVersion: 2
 guid: 4d9f8de07a2dd8d458df9efe1a62de1f
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - picture: {instanceID: 0}
+  - cube: {instanceID: 0}
+  - plane: {instanceID: 0}
+  - dummypicture: {fileID: 2800000, guid: 212923e72477b00428e6e07faa3608d1, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
