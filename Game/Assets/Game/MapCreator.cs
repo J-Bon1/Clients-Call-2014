@@ -11,7 +11,7 @@ public class MapCreator : MonoBehaviour {
 
 
 
-	private Block[,] GameField;
+	private GameObject[,] GameField;
 	private uint[] possibleColors;
 	private Texture[] possibleTextures;
 
