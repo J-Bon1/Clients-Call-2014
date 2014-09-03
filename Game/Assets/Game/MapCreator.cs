@@ -12,11 +12,16 @@ public class MapCreator : MonoBehaviour {
 
 
 	private GameObject[,] GameField;
+<<<<<<< HEAD
+	private uint[] possibleColors;
+	private Texture[] possibleTextures;
+=======
 	private Color[] possibleColors;
 	private Texture2D[] possibleTextures;
 
 	// Inspector stuff
 	public GameObject prefapBlock;
+>>>>>>> origin/master
 
 	// Use this for initialization
 	void Start () {

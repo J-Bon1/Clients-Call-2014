@@ -6,10 +6,14 @@ public class Block : MonoBehaviour {
 
 	public Texture2D picture;
 	public Color color; 
+
+	//private MapCreator creator;
+
 	public GameObject cube;
 	public GameObject plane;
 	// change this later to picture
 	public Texture2D dummypicture;
+
 
 	// Use this for initialization
 	void Start () {
@@ -25,4 +29,6 @@ public class Block : MonoBehaviour {
 	void Update () {
 	
 	}
+
+
 }
