@@ -11,17 +11,19 @@ public class MapCreator : MonoBehaviour {
 
 
 
-	private GameObject[,] GameField;
-	private Color[] possibleColors;
-	private Texture2D[] possibleTextures;
+	public GameObject[,] m_gameField;
+	public Color[] possibleColors;
+	public Texture2D[] possibleTextures;
 
 	// Inspector stuff
 	public GameObject prefapBlock;
 
 	// Use this for initialization
 	void Start () {
-		loadBrickTyps ();
+		prefapBlock = Resources.Load ("Block");
+		//loadBrickTyps ();
 		createGameField ();
+		print ("GameField: " + m_gameField.GetLength(0));
 	}
 	
 	// Update is called once per frame
@@ -38,7 +40,7 @@ public class MapCreator : MonoBehaviour {
 	}
 
 	private void createGameField(){
-		GameField  = new GameObject[dummyX, dummyY];
+		m_gameField  = new GameObject[dummyX, dummyY];
 		fillGameField ();
 	}
 	private GameObject createRandomBrick(){
@@ -55,16 +57,14 @@ public class MapCreator : MonoBehaviour {
 
 		int i;
 		int j;
-		print (GameField.GetLength (0));
-		for (i = 0; i < GameField.GetLength(0); i++) {
-			for (j = 0; j< GameField.GetLength(1); j++) {
+		for (i = 0; i < m_gameField.GetLength(0); i++) {
+			for (j = 0; j< m_gameField.GetLength(1); j++) {
 				while(!found){
 					dummyBlock = createRandomBrick ();
-					GameField[i,j] = dummyBlock;
-					GameField[i,j].transform.position = new Vector3(i,0,j);
-
-					if(NeighbourCheck.Check(dummyBlock,GameField,i,j)){
+					if(NeighbourCheck.Check(dummyBlock,m_gameField,i,j)){
 						found = true;
+						m_gameField[i,j] = dummyBlock;
+						m_gameField[i,j].transform.position = new Vector3(i,0,j);
 					}else{
 						Destroy(dummyBlock);
 					}
@@ -74,5 +74,8 @@ public class MapCreator : MonoBehaviour {
 
 			}
 		}						
+	}
+	public GameObject[,] getGameField(){
+		return m_gameField;
 	}
 }
